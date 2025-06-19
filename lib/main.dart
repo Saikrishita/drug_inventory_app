@@ -6,7 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'customer_dashboard.dart'; // Import hospital dashboard
 import 'vendor_dashboard.dart'; // Import vendor dashboard
 import 'auth_screen.dart';
-import 'login_screen.dart';
+import 'firebase_config.dart';
 
 
 
@@ -15,13 +15,7 @@ void main() async {
 
   if (kIsWeb) {
     await Firebase.initializeApp(
-        options: const FirebaseOptions(
-            apiKey: "AIzaSyB9a-RDmYWbqZGaybtc-atAbN72hnQraIU",
-            authDomain: "drug-inventory-and-supply.firebaseapp.com",
-            projectId: "drug-inventory-and-supply",
-            storageBucket: "drug-inventory-and-supply.firebasestorage.app",
-            messagingSenderId: "246319886572",
-            appId: "1:246319886572:web:75367a0c0703886bb775c9"),);
+        options: firebaseOptions);
   } else {
     await Firebase.initializeApp();
   }
